@@ -4,8 +4,9 @@ import base.TestBase;
 
 public class HotelSearchResultsPage extends TestBase{
 	
-	public String fetchTitle() {
-		return driver.getTitle();
-	}
+//	public String findTitle() {
+//		String title = fetchTitle();
+//		return title;
+//	}
 
 }

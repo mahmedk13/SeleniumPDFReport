@@ -34,20 +34,40 @@ public class HotelSearchPage extends TestBase {
 		}
 		
 		
+		
+		
 		public HotelSearchResultsPage searchHotel(String destination, String checkinDate, String checkoutDate) {
 			
-			destinationBtn.click();
-			destinationInputField.sendKeys(destination, Keys.ENTER);
+			//destinationBtn.click();
+			click(destinationBtn, "Destination field button");
 			
-			checkinBtn.click();
-			driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")).click();
-			doneBtn.click();
+			//destinationInputField.sendKeys(destination, Keys.ENTER);
+			typeWithEnter(destinationInputField, destination, "Destination Input field");
 			
-			checkoutBtn.click();
-			driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")).click();
-			doneBtn.click();
+			//checkinBtn.click();
+			click(checkinBtn, "Checkin Calendar Button");
 			
-			submitBtn.click();
+			
+			//driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")).click();
+			click(driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")), "Checkin Date: "+checkinDate);
+			
+			
+			//doneBtn.click();
+			click(doneBtn, "Done Button of Checkin Calendar");
+			
+			//checkoutBtn.click();
+			click(checkoutBtn, "Checkout Calendar Button");
+			
+			//driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")).click();
+			click(driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")), "Checkin Date: "+checkoutDate);
+
+			
+			//doneBtn.click();
+			click(doneBtn, "Done Button of Checkin Calendar");
+
+			
+			//submitBtn.click();
+			click(submitBtn, "Submit Button");
 			
 			return new HotelSearchResultsPage();
 			
