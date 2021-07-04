@@ -36,6 +36,7 @@ public class FlightSearchTest extends TestBase{
 		FlightSearchPage fsp = hp.navigateToFlightSearchPage();
 		FlightSearchResultsPage fsrp = fsp.searchFlight(origin, destination, checkinDate, CheckoutDate);
 		String text = fsrp.getBannerText();
+		System.out.println(text);
 		Assert.assertTrue(text.contains("COVID-19"));	
 	}
 	
