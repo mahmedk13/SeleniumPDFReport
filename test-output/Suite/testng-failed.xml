@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="grid" value="false"/>
   <listeners>
     <listener class-name="extentlisteners.ExtentListeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="tests" name="Firefox Test(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="https://www.expedia.com/"/>
     <classes>
-      <class name="testcases.FlightSearchTest">
+      <class name="testcases.HotelSearchTest">
         <methods>
-          <include name="searchFlight" invocation-numbers="0"/>
           <include name="init"/>
+          <include name="searchHotel" invocation-numbers="0"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testcases.FlightSearchTest -->
+      </class> <!-- testcases.HotelSearchTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

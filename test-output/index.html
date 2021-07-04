@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">1 test</span>
+                    <span class="test-stats">2 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="testcases.FlightSearchTest" class="method navigator-link" hash-for-method="searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)">searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="testcases.HotelSearchTest" class="method navigator-link" hash-for-method="searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)">searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -114,6 +114,16 @@
                       <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
                     <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testcases.FlightSearchTest" class="method navigator-link" hash-for-method="searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)">searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testcases.FlightSearchTest" class="method navigator-link" hash-for-method="searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)">searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="testcases.HotelSearchTest" class="method navigator-link" hash-for-method="searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)">searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)</a> <!-- method navigator-link -->
@@ -134,6 +144,30 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+              <span class="class-name">testcases.HotelSearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)">
+                  </a> <!-- searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021) -->
+                  <span class="method-name">searchHotel</span>
+                  <span class="parameters">(Hyderabad, Jul 14, 2021, Jul 16, 2021)</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at testcases.HotelSearchTest.searchHotel(HotelSearchTest.java:37)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+... Removed 20 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">testcases.FlightSearchTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -143,14 +177,18 @@
                   </a> <!-- searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021) -->
                   <span class="method-name">searchFlight</span>
                   <span class="parameters">(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at testcases.FlightSearchTest.searchFlight(FlightSearchTest.java:39)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)">
+                  </a> <!-- searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021) -->
+                  <span class="method-name">searchFlight</span>
+                  <span class="parameters">(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -176,16 +214,27 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;grid&quot; value=&quot;false&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;extentlisteners.ExtentListeners&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Chrome Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://www.expedia.com/&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testcases.FlightSearchTest&quot;/&gt;
       &lt;class name=&quot;testcases.HotelSearchTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Chrome Test --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Firefox Test&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;firefox&quot;/&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://www.expedia.com/&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testcases.FlightSearchTest&quot;/&gt;
+      &lt;class name=&quot;testcases.HotelSearchTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Firefox Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -197,7 +246,10 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (2 classes)</span>
+                <span class="test-name">Chrome Test (2 classes)</span>
+              </li>
+              <li>
+                <span class="test-name">Firefox Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -223,20 +275,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'searchHotel')
 data.setCell(0, 2, 'testcases.HotelSearchTest')
-data.setCell(0, 3, 16835);
+data.setCell(0, 3, 25657);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'searchFlight')
 data.setCell(1, 2, 'testcases.FlightSearchTest')
-data.setCell(1, 3, 12747);
+data.setCell(1, 3, 24182);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'searchFlight')
+data.setCell(2, 2, 'testcases.FlightSearchTest')
+data.setCell(2, 3, 22579);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'searchHotel')
+data.setCell(3, 2, 'testcases.HotelSearchTest')
+data.setCell(3, 3, 16469);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 29 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -264,33 +324,63 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.FlightSearchTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">init</span>
+                <span class="method-name">init(false, firefox, https://www.expedia.com/)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-class before">
+                <span class="method-name">init(false, chrome, https://www.expedia.com/)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</span>
-                <span class="method-start">20928 ms</span>
+                <span class="method-start">22140 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">searchFlight(Delhi, Hyderabad, Jul 13, 2021, Jul 20, 2021)</span>
+                <span class="method-start">29903 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">34101 ms</span>
+                <span class="method-start">46330 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testcases.HotelSearchTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">init</span>
-                <span class="method-start">34763 ms</span>
+                <span class="method-name">init(false, chrome, https://www.expedia.com/)</span>
+                <span class="method-start">48860 ms</span>
+              </div> <!-- configuration-class before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testcases.FlightSearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">52483 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">testcases.HotelSearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">init(false, firefox, https://www.expedia.com/)</span>
+                <span class="method-start">60676 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)</span>
-                <span class="method-start">51252 ms</span>
+                <span class="method-start">65710 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">searchHotel(Hyderabad, Jul 14, 2021, Jul 16, 2021)</span>
+                <span class="method-start">87469 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">68091 ms</span>
+                <span class="method-start">91369 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">104944 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

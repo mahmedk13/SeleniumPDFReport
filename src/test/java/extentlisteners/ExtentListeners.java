@@ -1,6 +1,7 @@
 package extentlisteners;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.testng.ITestContext;
@@ -14,7 +15,6 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 
-import utilities.Utilities;
 
 
 public class ExtentListeners implements ITestListener {
@@ -25,10 +25,12 @@ public class ExtentListeners implements ITestListener {
 	
 	ExtentReports extent = ExtentManager.createInstance("./src/test/resources/reports/"+reportName);
 	
-	public static ExtentTest test;
+	public static ThreadLocal<ExtentTest> testReport = new ThreadLocal<ExtentTest>();
 
 	public void onTestStart(ITestResult result) {
-		test = extent.createTest(result.getMethod().getMethodName());
+		
+		ExtentTest test = extent.createTest(result.getMethod().getMethodName());
+		testReport.set(test);
 		
 			
 	}
@@ -37,7 +39,7 @@ public class ExtentListeners implements ITestListener {
 		String methodName = result.getMethod().getMethodName();
 		String text = "<b>"+"Test Case: "+methodName.toUpperCase()+" PASSED"+"</b>";
 		Markup m = MarkupHelper.createLabel(text, ExtentColor.GREEN);
-		test.pass(m);
+		testReport.get().pass(m);
 		
 		
 		
@@ -45,15 +47,18 @@ public class ExtentListeners implements ITestListener {
 
 	public void onTestFailure(ITestResult result) {
 		
-		try {
-			Utilities.captureScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
+		
+		testReport.get().fail("<details>"+"<summary>"+"<b>"+"Exception occured: Click here to see"+"</b>"+"</summary>"
+		+exceptionMessage.replace(",", "<br>")+"</details>"+"\n");
+		
+		ExtentManager.captureScreenshot();
+		
+		
 		
 		try {
-			test.fail("<b>"+"<font color="+"red>" +"screenshot of failure"+"</font>"+"</b>", MediaEntityBuilder.createScreenCaptureFromPath(Utilities.screenshotName).build());
+			testReport.get().fail("<b>"+"<font color="+"red>" +"screenshot of failure"+"</font>"+"</b>", MediaEntityBuilder.createScreenCaptureFromPath(ExtentManager.screenshotName).build());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,7 +67,7 @@ public class ExtentListeners implements ITestListener {
 		String methodName = result.getMethod().getMethodName();
 		String text = "<b>"+"Test Case: "+methodName.toUpperCase()+" FAILED"+"</b>";
 		Markup m = MarkupHelper.createLabel(text, ExtentColor.RED);
-		test.fail(m);
+		testReport.get().fail(m);
 
 		
 	}

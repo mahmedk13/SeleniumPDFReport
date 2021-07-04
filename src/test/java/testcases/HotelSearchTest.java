@@ -11,26 +11,28 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import base.TestBase;
 import pages.HotelSearchPage;
 import pages.HotelSearchResultsPage;
 import utilities.DataUtils;
+import utilities.DriverManager;
 
-public class HotelSearchTest {
+public class HotelSearchTest extends TestBase {
 	
+	@Parameters({"grid", "browser", "url"})
 	@BeforeClass
-	public void init() {
-		TestBase.setUp();
-		TestBase.launchBrowser();
+	public void init(String grid, String browser, String url) {
+		//TestBase.setUp();
+		launchBrowser(grid, browser, url);
 	}
 	
 	@Test(dataProvider="getData", dataProviderClass=DataUtils.class)
 	public void searchHotel(String origin, String checkinDate, String CheckoutDate) {
 		HotelSearchPage hsp = new HotelSearchPage();
 		HotelSearchResultsPage hsrp = hsp.searchHotel(origin, checkinDate, CheckoutDate);
-		String title = hsrp.fetchTitle();
+		String title = DriverManager.getDriver().getTitle();
 		System.out.println(title);
 		Assert.assertTrue(title.contains("Hyderabad"));
 	}
@@ -38,7 +40,7 @@ public class HotelSearchTest {
 	
 	@AfterClass
 	public void tearDown() {
-		TestBase.closeBrowser();
+		closeBrowser();
 	}
 
 }

@@ -5,10 +5,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import base.TestBase;
 
-public class FlightSearchPage extends TestBase {
+public class FlightSearchPage extends BasePage {
 	
 	//shortcut for multiple import is ctrl+shift+O
 	@FindBy(css="button[data-stid=location-field-leg1-origin-menu-trigger]")
@@ -41,6 +42,9 @@ public class FlightSearchPage extends TestBase {
 	
 	public FlightSearchResultsPage searchFlight(String origin, String destination, String checkinDate, String checkoutDate ) {
 		
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+
+		
 		//originField.click();
 		click(originField, "Origin Field Button");
 		
@@ -59,6 +63,7 @@ public class FlightSearchPage extends TestBase {
 		
 		
 		//driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='"+checkinDate+"']")));
 		click(driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")), "Checkin Date: "+checkinDate);
 		
 		
@@ -69,6 +74,7 @@ public class FlightSearchPage extends TestBase {
 		click(checkoutBtn, "Checkout Calendar Button");
 		
 		//driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='"+checkoutDate+"']")));
 		click(driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")), "Checkin Date: "+checkoutDate);
 
 		

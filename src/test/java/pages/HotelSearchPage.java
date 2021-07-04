@@ -5,10 +5,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import base.TestBase;
 
-public class HotelSearchPage extends TestBase {
+public class HotelSearchPage extends BasePage {
 		
 		@FindBy(css="button[data-stid*='location-field-destination']")
 		private WebElement destinationBtn;
@@ -38,6 +39,8 @@ public class HotelSearchPage extends TestBase {
 		
 		public HotelSearchResultsPage searchHotel(String destination, String checkinDate, String checkoutDate) {
 			
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+			
 			//destinationBtn.click();
 			click(destinationBtn, "Destination field button");
 			
@@ -49,6 +52,7 @@ public class HotelSearchPage extends TestBase {
 			
 			
 			//driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='"+checkinDate+"']")));
 			click(driver.findElement(By.xpath("//button[@aria-label='"+checkinDate+"']")), "Checkin Date: "+checkinDate);
 			
 			
@@ -59,6 +63,8 @@ public class HotelSearchPage extends TestBase {
 			click(checkoutBtn, "Checkout Calendar Button");
 			
 			//driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")).click();
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@aria-label='"+checkoutDate+"']")));
+
 			click(driver.findElement(By.xpath("//button[@aria-label='"+checkoutDate+"']")), "Checkin Date: "+checkoutDate);
 
 			

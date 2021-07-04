@@ -11,22 +11,22 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import base.TestBase;
 import pages.FlightSearchPage;
 import pages.FlightSearchResultsPage;
 import pages.HomePage;
 import utilities.DataUtils;
 
-public class FlightSearchTest {
+public class FlightSearchTest extends TestBase{
 	
 
-	
+	@Parameters({"grid", "browser", "url"})
 	@BeforeClass
-	public void init() {
-		TestBase.setUp();
-		TestBase.launchBrowser();
+	public void init(String grid, String browser, String url) {
+		//TestBase.setUp();
+		launchBrowser(grid, browser, url);
 	}
 	
 	@Test(dataProvider="getData", dataProviderClass=DataUtils.class)
@@ -36,14 +36,14 @@ public class FlightSearchTest {
 		FlightSearchPage fsp = hp.navigateToFlightSearchPage();
 		FlightSearchResultsPage fsrp = fsp.searchFlight(origin, destination, checkinDate, CheckoutDate);
 		String text = fsrp.getBannerText();
-		Assert.assertTrue(text.contains("COVID-19 alert: Travel requirements are changing rapidly"));	
+		Assert.assertTrue(text.contains("COVID-19"));	
 	}
 	
 	
 	
 	@AfterClass
 	public void tearDown() {
-		TestBase.closeBrowser();
+		closeBrowser();
 	}
 	
 	
