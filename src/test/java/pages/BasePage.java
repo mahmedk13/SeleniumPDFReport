@@ -1,5 +1,6 @@
 package pages;
 
+import org.testng.annotations.BeforeMethod;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,32 +16,19 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import extentlisteners.ExtentListeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import testcases.TestBase;
-import utilities.DriverManager;
 
 public class BasePage {
 	
 	
 	
 	public WebDriver driver;
-	public static Properties config = new Properties();
-	public static FileInputStream fis = null;
 	
 	public BasePage() {
-		this.driver = DriverManager.getDriver();
+		this.driver = TestBase.driver;
 	}
 
 	
-	public static void setUp() {
-		try {
-			
-			fis = new FileInputStream("./src/test/resources/ConfigFiles/config.properties");
-			config.load(fis);
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
+	
 	
 	public void click(WebElement ele, String elementName) {
 		ele.click();

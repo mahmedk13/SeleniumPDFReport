@@ -12,7 +12,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import utilities.DriverManager;
+import tech.grasshopper.reporter.ExtentPDFReporter;
+import testcases.TestBase;
+
 
 public class ExtentManager {
 	
@@ -29,6 +31,8 @@ public class ExtentManager {
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		
+	
+		
 		extent.setSystemInfo("Windows", "version 10");
 		extent.setSystemInfo("Automation Team", "My Team");
 		
@@ -42,7 +46,7 @@ public class ExtentManager {
 	
 	public static void captureScreenshot() {
 		
-		TakesScreenshot scrShot =((TakesScreenshot)DriverManager.getDriver());
+		TakesScreenshot scrShot =((TakesScreenshot)TestBase.driver);
 
 		File scrFile = scrShot.getScreenshotAs(OutputType.FILE);
 		
